@@ -1,7 +1,8 @@
-html{
+html {
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: rgb(255, 255, 255);
     min-height: 100vh;
     font-family: sans-serif;
@@ -11,65 +12,133 @@ body{
     background-color: #f5f5f5;
 
 }
-article{
+
+article {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
     width: 450px;
     background-color: rgb(251, 251, 251);
-    box-shadow: 11px -9px 23px 10px rgba(87,81,81,0.3);
-}
-#banner{
-    /* margin: 1px auto; */
-    position: relative;
-    margin-top: 30px;
-    /* background-color: red; */
+    box-shadow: 5px 5px 17px -4px rgba(0, 0, 0, 0.75);
+
+    animation: tres 700ms linear 1s;
 }
 
-#banner img{
+@keyframes tres {
+    0% {
+        background-color: thistle;
+        transform: rotate(0);
+    }
+
+    50% {
+        background-color: beige;
+        transform: rotate(5deg);
+    }
+
+    100% {
+        background-color: bisque;
+        transform: rotate(-5deg);
+
+    }
+
+}
+
+#banner img {
     position: absolute;
     top: 50px;
     left: -40px;
     width: 340px;
+    transition: all 350ms;
 }
-#banner_circulo{
+
+#banner img:hover {
+    transform: rotate(-40deg);
+}
+
+#banner_circulo {
     width: 240px;
     height: 240px;
     background-color: red;
-    background: rgb(231,20,20);
-    background: linear-gradient(90deg, rgba(231,20,20,1) 12%, rgba(30,19,195,1) 86%);
-    border-radius: 50%;
-
+    background: rgb(231, 20, 20);
+    background: linear-gradient(90deg, rgba(231, 20, 20, 1) 12%, rgba(30, 19, 195, 1) 86%);
+    border-radius: 17% 83% 15% 85% / 77% 29% 71% 23%;
+    animation-name: fondo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
-h1{
+
+@keyframes fondo {
+    0% {
+        border-radius: 38% 62% 68% 32% / 61% 52% 48% 39%;
+    }
+
+    20% {
+        border-radius: 46% 54% 56% 44% / 70% 45% 55% 30%;
+    }
+
+    40% {
+        border-radius: 51% 49% 61% 39% / 72% 50% 50% 28%;
+
+    }
+
+    60% {
+        border-radius: 65% 35% 62% 38% / 62% 57% 43% 38%;
+    }
+
+    80% {
+        border-radius: 47% 55% 57% 45% / 71% 46% 56% 31%;
+    }
+
+    100% {
+        border-radius: 38% 62% 68% 32% / 61% 52% 48% 39%;
+    }
+}
+
+h1 {
     font-size: 50px;
     padding-right: 100px;
     margin: 20px 0;
+    z-index: 1;
 }
-p{
+
+
+p {
     padding: 0 40px;
     line-height: 1.5;
     color: #333;
     /* margin: 0 40px; */
     /* max-width: 80%; */
 }
-ul{
+
+ul {
     padding-left: 0;
     list-style: none;
     display: flex;
     gap: 20px;
 }
-li button{
+
+li button {
     font-size: 11px;
     font-weight: 900;
     padding: 4px 20px;
     border: none;
     border-radius: 9px;
-    box-shadow: 11px -9px 23px 10px rgba(87,81,81,0.3);
+    box-shadow: 4px 4px 9px -4px rgba(0, 0, 0, 0.75);
     background-color: #e5e5e5;
+    transition: all 200ms;
 }
-#send{
+
+li button:hover {
+    background-color: #f04107;
+}
+
+li button:active {
+    transform: scale(0.75);
+}
+
+#send {
     background-color: #f04107;
     font-size: 22px;
     border: none;
@@ -78,4 +147,13 @@ li button{
     padding: 6px 90px;
     margin-bottom: 30px;
     margin-top: 10px;
+}
+
+#send:hover {
+    cursor: pointer;
+    transform: scale(1.20);
+}
+
+#send:active {
+    transform: scale(0.75);
 }
